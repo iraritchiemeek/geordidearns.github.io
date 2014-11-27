@@ -8,7 +8,7 @@ body {
 }
 
 .parallax-background {
-  background-image: url('112.jpg');
+  background-image: url('imgs/112.jpg');
   background-repeat: no-repeat;
   position: fixed;
   height: 620px;
@@ -16,7 +16,7 @@ body {
 }
 
 .circular {
-  background: url('geordi.jpg') no-repeat;
+  background: url('imgs/geordi.jpg') no-repeat;
   background-position: center top;
   width: 150px;
   height: 150px;
@@ -34,6 +34,7 @@ body {
   text-align: center;
   margin-top: 15%;
 }
+
 .parallax-content {
   max-width: 100%;
   position: relative;
