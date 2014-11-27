@@ -1,13 +1,49 @@
 
-.header {
- display: block;
- position: fixed;
- z-index: 999;
- left: 0;
- right: 0;
- top: 0;
- overflow: hidden;
- background-color: #33CCFF;
- font-family:
 
+body {
+ font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !important;
+  font-weight: 200;
+  font-size: 20px;
+  margin: 0px
 }
+
+.parallax-background {
+  background-image: url('112.jpg');
+  background-repeat: no-repeat;
+  position: fixed;
+  height: 620px;
+  width: 100%;
+}
+
+.circular {
+  background: url('geordi.jpg') no-repeat;
+  background-position: center top;
+  width: 150px;
+  height: 150px;
+  border-radius: 75px;
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  margin-top: -75px;
+  margin-left: -75px;
+ }
+
+.intro-text {
+  font-size: 50px;
+  color: #fff;
+  text-align: center;
+  margin-top: 15%;
+}
+.parallax-content {
+  max-width: 100%;
+  position: relative;
+  top: 245px;
+  padding: 50px;
+  font-size: 20px;
+  background-color: #fff;
+}
+
+
+
+
+
