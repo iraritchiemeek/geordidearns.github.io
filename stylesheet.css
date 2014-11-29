@@ -50,6 +50,13 @@ body {
   background-color: #fff;
 
 }
+.content-body{
+margin-left: 5%;
+margin-right:  5%;
+
+
+
+}
 .sidebar{
 width:150px;
     position:absolute;
@@ -61,12 +68,15 @@ width:150px;
 .twitter-timeline{
 width: 50%;
 height: 250px;
-margin-left: 7%
+margin-left: 5%
+
 
 }
 
 .soundcloud{
 margin-left: 0%
+
+
 
 
 
