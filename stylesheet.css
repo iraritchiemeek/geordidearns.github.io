@@ -31,6 +31,60 @@ body {
   margin-left: -75px;
 
  }
+ .slideUp{
+  animation-name: slideUp;
+  -webkit-animation-name: slideUp;
+
+  animation-duration: 2.5s;
+  -webkit-animation-duration: 2.5s;
+
+  animation-timing-function: ease;
+  -webkit-animation-timing-function: ease;
+
+  visibility: visible !important;
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  50%{
+    transform: translateY(-8%);
+  }
+  65%{
+    transform: translateY(4%);
+  }
+  80%{
+    transform: translateY(-4%);
+  }
+  95%{
+    transform: translateY(2%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes slideUp {
+  0% {
+    -webkit-transform: translateY(100%);
+  }
+  50%{
+    -webkit-transform: translateY(-8%);
+  }
+  65%{
+    -webkit-transform: translateY(4%);
+  }
+  80%{
+    -webkit-transform: translateY(-4%);
+  }
+  95%{
+    -webkit-transform: translateY(2%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+  }
+}
 
 .intro-text {
   vertical-align: top;
@@ -50,31 +104,37 @@ body {
   background-color: #fff;
 
 }
-.content-body{
-margin-left: 5%;
-margin-right:  5%;
+.content-body {
+margin-left: 0%;
+margin-right:  0%;
+width: 850px;
+display:inline-block;
 
 
 
 }
-.sidebar{
-width:150px;
-    position:absolute;
-    top:0;
-    right:0;
+.sidebar {
+max-width:300px;
+height: 1222px;
+position:static;
+float: right;
+margin-right: 0px;
+margin-top: 20px
 
 }
 
 .twitter-timeline{
-width: 50%;
+width: 300px;
 height: 250px;
-margin-left: 5%
+margin-left: 0%
 
 
 }
 
 .soundcloud{
-margin-left: 0%
+margin-left: 0%;
+width: 300px;
+
 
 
 
@@ -101,6 +161,8 @@ text-align: center;
 
 
 }
+
+
 
 
 
