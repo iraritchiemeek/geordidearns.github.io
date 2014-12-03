@@ -8,6 +8,8 @@ body {
 
 }
 
+/* Header Styling */
+
 .parallax-background {
   display: table;
   background-image: url('imgs/112.jpg');
@@ -95,6 +97,8 @@ body {
 
 }
 
+/* Content Body */
+
 .main-content {
   max-width: 100%;
   position: relative;
@@ -113,6 +117,9 @@ display:inline-block;
 
 
 }
+
+/* Sidebar/Widget Styling */
+
 .sidebar {
 max-width:300px;
 height: 1222px;
@@ -135,13 +142,10 @@ margin-left: 0%
 margin-left: 0%;
 width: 300px;
 
-
-
-
-
-
-
 }
+
+/* Footer Styling */
+
 .footer {
     position: fixed;
     left: 0;
@@ -162,6 +166,30 @@ text-align: center;
 
 }
 
+
+/* Blog Styling */
+
+#technical {
+width: 50%;
+margin: 0 auto;
+
+}
+
+#technical-title {
+text-align: center
+
+}
+
+#cultural {
+width: 50%;
+margin: 0 auto;
+
+}
+
+#cultural-title {
+text-align: center
+
+}
 
 
 
