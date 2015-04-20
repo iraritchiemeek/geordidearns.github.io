@@ -1,3 +1,4 @@
+function start(){
 // get a refrence to the canvas and its context
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -28,30 +29,16 @@ img1.src = "http://icons.iconarchive.com/icons/etherbrian/bit-eat/32/Bacon-icon.
 var images = [img1];
 
 // start animating
-window.onload=function(){
+// window.onload=function(){
 animate();
-};
+// };
 
-
-
-console.log(images);
 
 function spawnRandomObject() {
 
     // select a random type for this new object
     var t;
 
-    // About Math.random()
-    // Math.random() generates a semi-random number
-    // between 0-1. So to randomly decide if the next object
-    // will be A or B, we say if the random# is 0-.49 we
-    // create A and if the random# is .50-1.00 we create B
-
-    if (Math.random() < 0.50) {
-        t = "red";
-    } else {
-        t = "blue";
-    }
 
     // create the new object
     var object = {
@@ -98,9 +85,84 @@ function animate() {
 
     // move each object down the canvas
     for (var i = 0; i < objects.length; i++) {
+        destroyBacon(objects, i)
         var object = objects[i];
         object.y += spawnRateOfDescent;
+        if(baconIsInBound(object)){
+            checkCollision(object);
+        }
+        if (i === 0){
+            checkCollision(object);
+        }
         ctx.drawImage(object.image, object.x, object.y, 30, 30);
     }
 
 }
+
+function returnCatPosition (){
+    var top = Math.round($('.follower').offset().top);
+    var left = Math.round($('.follower').offset().left);
+    var right = Math.round(left + 50);
+    var down = Math.round(top + 80) ;
+    var centerX = Math.round((left + right) / 2);
+
+    return [top,right, down,left, centerX];
+}
+
+// $(follower).offset().left < (x + 10) && $(follower).offset().left > (x - 10)
+
+
+function baconBound(bacon){
+    var top =  bacon.y;
+    var left = Math.round(bacon.x);
+    var right = Math.round(bacon.x + 32);
+    var down = bacon.y + 32 ;
+    var centerX = Math.round((left + right) / 2);
+    return [top,right, down,left, centerX];
+};
+
+
+function checkCollision(bacon){
+    var cat = returnCatPosition();
+    var bacon = baconBound(bacon);
+    // check left and right
+    if ( (bacon[3] > cat[3] && bacon[3] < cat[1])  ||  (bacon[1] > cat[3] && bacon[1] < cat[1])   ) {
+        //check top and bottom
+        if ( (bacon[2] < cat[2] && bacon[2] > cat[0]) || (bacon[0] < cat[2] && bacon[0] > cat[0])   ) {
+             location.reload();
+        }
+    } 
+
+};
+
+function destroyBacon(bacons, index){
+    if(bacons[index].y > 585){
+        bacons.splice(index,1);
+    }
+};
+
+function baconIsInBound(bacon){
+    var bacon = baconBound(bacon);
+    var cat = returnCatPosition();
+    if( (cat[3] - 20) < bacon[4] ||  (cat[1] + 20) > bacon[4]){
+        return true;
+    }else{
+        return false;
+    }
+
+};
+
+};
+
+
+
+
+// && bacon.y - 50 < cat[1] && bacon.x > cat[0] + 50 &&  bacon.y > cat[1] + 80
+
+
+
+
+
+
+
+
