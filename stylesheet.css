@@ -8,12 +8,14 @@ body {
     margin-top: -16px;
     margin-left: -8px;
     width: 1280px;
-    background-image: url('http://images1.wikia.nocookie.net/__cb37/simpsons/images/5/50/Wiki-background')
+    max-height:585px;
+    background-image: url('./assets/background.png');
+    background-repeat: cover;
 }
 
 #bacon {
 
-background-image: url('http://icons.iconarchive.com/icons/etherbrian/bit-eat/32/Bacon-icon.png');
+background-image: url('./assets/Bacon-icon.png');
 
 }
 #nav {
@@ -25,7 +27,7 @@ background-image: url('http://icons.iconarchive.com/icons/etherbrian/bit-eat/32/
   background-color: #FF6961;
 }
 
-footer {
+/*footer {
   margin-top: 491px;
   width: 1280px;
   height: 70px;
@@ -34,7 +36,7 @@ footer {
   position: absolute;
   bottom: 0;
   margin-left: -8px;
-}
+}*/
 
 .follower{
   position : absolute;
