@@ -1,3 +1,4 @@
+function start(){
 // get a refrence to the canvas and its context
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
@@ -28,9 +29,9 @@ img1.src = "http://icons.iconarchive.com/icons/etherbrian/bit-eat/32/Bacon-icon.
 var images = [img1];
 
 // start animating
-window.onload=function(){
+// window.onload=function(){
 animate();
-};
+// };
 
 
 function spawnRandomObject() {
@@ -150,6 +151,10 @@ function baconIsInBound(bacon){
     }
 
 };
+
+};
+
+
 
 
 // && bacon.y - 50 < cat[1] && bacon.x > cat[0] + 50 &&  bacon.y > cat[1] + 80
