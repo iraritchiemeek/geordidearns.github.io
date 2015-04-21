@@ -1,3 +1,4 @@
+
 function start(){
 // get a refrence to the canvas and its context
 var canvas = document.getElementById("canvas");
@@ -24,7 +25,6 @@ var startTime = Date.now();
 var img1 = new Image();
 img1.src = "http://icons.iconarchive.com/icons/etherbrian/bit-eat/32/Bacon-icon.png";
 
-
 // Our images array
 var images = [img1];
 
@@ -32,7 +32,6 @@ var images = [img1];
 // window.onload=function(){
 animate();
 // };
-
 
 function spawnRandomObject() {
 
@@ -55,11 +54,7 @@ function spawnRandomObject() {
     objects.push(object);
 }
 
-
-
-
 function animate() {
-
 
     // get the elapsed time
     var time = Date.now();
@@ -96,7 +91,6 @@ function animate() {
         }
         ctx.drawImage(object.image, object.x, object.y, 30, 30);
     }
-
 }
 
 function returnCatPosition (){
@@ -109,9 +103,6 @@ function returnCatPosition (){
     return [top,right, down,left, centerX];
 }
 
-// $(follower).offset().left < (x + 10) && $(follower).offset().left > (x - 10)
-
-
 function baconBound(bacon){
     var top =  bacon.y;
     var left = Math.round(bacon.x);
@@ -121,18 +112,16 @@ function baconBound(bacon){
     return [top,right, down,left, centerX];
 };
 
-
 function checkCollision(bacon){
     var cat = returnCatPosition();
     var bacon = baconBound(bacon);
     // check left and right
-    if ( (bacon[3] > cat[3] && bacon[3] < cat[1])  ||  (bacon[1] > cat[3] && bacon[1] < cat[1])   ) {
+    if ( (bacon[3] > cat[3] && bacon[3] < cat[1])  ||  (bacon[1] > cat[3] && bacon[1] < cat[1]) ) {
         //check top and bottom
-        if ( (bacon[2] < cat[2] && bacon[2] > cat[0]) || (bacon[0] < cat[2] && bacon[0] > cat[0])   ) {
-             location.reload();
+        if ( (bacon[2] < cat[2] && bacon[2] > cat[0]) || (bacon[0] < cat[2] && bacon[0] > cat[0]) ) {
+             alert('Game ended');
         }
     } 
-
 };
 
 function destroyBacon(bacons, index){
@@ -146,20 +135,12 @@ function baconIsInBound(bacon){
     var cat = returnCatPosition();
     if( (cat[3] - 20) < bacon[4] ||  (cat[1] + 20) > bacon[4]){
         return true;
-    }else{
+    } else {
         return false;
     }
-
 };
 
 };
-
-
-
-
-// && bacon.y - 50 < cat[1] && bacon.x > cat[0] + 50 &&  bacon.y > cat[1] + 80
-
-
 
 
 
