@@ -1,7 +1,7 @@
 Balloon Kitteh V1.0
 ======================
 
-To do:
+## To do:
 
 * Restyle timer
 * End game logic
@@ -10,7 +10,7 @@ To do:
 * Provide a playlist of 8bit music
 * Have a mute button for the music
 
-* Current Contributors:
+## Current Contributors:
 
 * Geordi Dearns - geordidearns
 * Alex Barret - Alexb52
