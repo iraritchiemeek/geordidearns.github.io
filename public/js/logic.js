@@ -73,42 +73,42 @@ Logic.prototype.animateBacon = function() {
     this.ctx.stroke();
 
     // move each object down the canvas
-    for (this.i = 0; i < this.objects.length; i++) {
-        destroyBacon(this.objects, i)
+    for (var i = 0; i < this.objects.length; i++) {
+        this.destroyOffscreenBacon(this.objects, i)
         this.object = this.objects[i];
-        object.y += this.spawnRateOfDescent;
-        if(baconIsInBound(object)){
-            checkCollision(object);
+        this.object.y += this.spawnRateOfDescent;
+        if(this.baconIsInBound(this.object)){
+            this.checkCollision(this.object);
         }
         if (i === 0){
-            checkCollision(object);
+            this.checkCollision(this.object);
         }
-        this.ctx.drawImage(object.image, object.x, object.y, 30, 30);
+        this.ctx.drawImage(this.object.image, this.object.x, this.object.y, 30, 30);
     }	
 }
 
 Logic.prototype.returnCatDimensions = function() {
-	this.top = Math.round($('.follower').offset().top);
-    this.left = Math.round($('.follower').offset().left);
-    this.right = Math.round(left + 50);
-    this.down = Math.round(top + 80) ;
-    this.centerX = Math.round((left + right) / 2);
+	var top = Math.round($('.follower').offset().top);
+    var left = Math.round($('.follower').offset().left);
+    var right = Math.round(left + 50);
+    var down = Math.round(top + 80) ;
+    var centerX = Math.round((left + right) / 2);
 
     return [top,right, down,left, centerX];
 };
 
 Logic.prototype.returnBaconDimensions = function(bacon) {
-	this.top =  bacon.y;
-    this.left = Math.round(bacon.x);
-    this.right = Math.round(bacon.x + 32);
-    this.down = bacon.y + 32 ;
-    this.centerX = Math.round((left + right) / 2);
+	var top =  bacon.y;
+    var left = Math.round(bacon.x);
+    var right = Math.round(bacon.x + 32);
+    var down = bacon.y + 32 ;
+    var centerX = Math.round((left + right) / 2);
     return [top,right, down,left, centerX];
 };
 
 Logic.prototype.checkCollision = function(bacon) {
-	this.cat = returnCatPosition();
-    this.bacon = baconBound(bacon);
+	var cat = this.returnCatDimensions();
+    var bacon = this.returnBaconDimensions(bacon);
     // check left and right
     if ( (bacon[3] > cat[3] && bacon[3] < cat[1])  ||  (bacon[1] > cat[3] && bacon[1] < cat[1]) ) {
         //check top and bottom
@@ -118,15 +118,15 @@ Logic.prototype.checkCollision = function(bacon) {
     } 
 };
 
-Logic.prototype.destroyOffscreenBacon = function(bacon, index) {
+Logic.prototype.destroyOffscreenBacon = function(bacons, index) {
 	if(bacons[index].y > 585){
         bacons.splice(index,1);
     }
 };
 
 Logic.prototype.baconIsInBound = function(bacon) {
-	this.bacon = baconBound(bacon);
-    this.cat = returnCatPosition();
+	var bacon = this.returnBaconDimensions(bacon);
+    var cat = this.returnCatDimensions();
     if( (cat[3] - 20) < bacon[4] ||  (cat[1] + 20) > bacon[4]){
         return true;
     } else {
