@@ -1,0 +1,94 @@
+
+body {
+    height: 100%;
+    overflow: hidden;
+}
+
+#canvas {
+    margin-top: -16px;
+    margin-left: -8px;
+    width: 1280px;
+    max-height:585px;
+    background-image: url('../imgs/background.png');
+    background-repeat: cover;
+}
+
+#bacon {
+
+background-image: url('../imgs/Bacon-icon.png');
+
+}
+#nav {
+  width: 1240px;
+  height: 70px;
+  margin-top: -8px;
+  margin-left: -8px;
+  list-style: none;
+  background-color: #FF6961;
+}
+
+footer {
+  margin-top: 491px;
+  width: 1280px;
+  height: 70px;
+  list-style: none;
+  background-color: #FF6961;
+  position: absolute;
+  bottom: 0;
+  margin-left: -8px;
+}
+
+.follower{
+  position : absolute;
+  color : white;
+  padding : 150px;
+  overflow: auto;
+  background-image: url('../imgs/nyannyan.gif');
+  background-repeat: no-repeat;
+}
+
+.cursor {
+    width:100%;
+    height:100%;
+    cursor:url('http://icons.iconarchive.com/icons/etherbrian/bit-eat/32/Bacon-icon.png'), auto;
+}
+
+.socialicons {
+  display: inline-block;
+  position: absolute;
+  margin: 15px;
+
+  text-align: center;
+}
+
+#startBtn {
+  position:absolute;
+  margin-top: 150px;
+  margin-left: 550;
+  width: 120px;
+  padding: 20px;
+  font-family: 'Bubbler One', sans-serif;
+  text-align: center;
+}
+
+
+.timer{
+  color: black;
+  font-size: 30px;
+  position: absolute;
+  border-radius: 5px;
+  top: 5px;
+  right: 10px;
+  border: 2px solid black;
+  display: block;
+  padding: 10px;
+  min-width: 60px;
+  height: 30px;
+  background-color: white;
+  opacity: 0.5;
+}
+
+#nav li {
+  text-align: center;
+  margin-top: -13px;
+}

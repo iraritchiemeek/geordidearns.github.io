@@ -4,23 +4,24 @@
 
 	<head>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-		<script src="logic.js"></script>
-		<script src="mousefollow.js"></script>
-		<script src="startbutton.js"></script>
-		<script src="time.js"></script>
-		<link rel="stylesheet" type="text/css" href="stylesheet.css">
+		<script src="js/helpers.js"></script>
+		<script src="js/logic.js"></script>
+		<script src="js/mouse.js"></script>
+		<script src="js/view.js"></script>
+		<script src="js/controller.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 	</head>
 
 	<body>
 
 		<div class="navbar">
 			<ul id="nav">
-				<li><img src="assets/titlefinal.png"></li>
+				<li><img src="imgs/titlefinal.png"></li>
 				<div class="timer"><span id="minutes">00</span>:<span id="seconds">00</span></div>
 			</ul>
 		</div>
 
-		<div id = "startBtn"><img src="assets/startbuttonfinal.png"></div>
+		<div id = "startBtn"><img src="imgs/startbuttonfinal.png"></div>
 
 		<canvas id="canvas" width=1250 height=557></canvas>
 
@@ -28,13 +29,13 @@
 		
 		<div class="cursor"></div>
 		
-		<audio class ="playmusic" src="assets/wishyouweremine.wav"></audio>
+		<audio class ="playmusic" src="mp3/wishyouweremine.wav"></audio>
 
 		<footer>
 		        <ul class="socialicons">
-		              <a href="https://www.twitter.com/geordidearns" target="_blank"><img src="assets/twitterfinal.png"></a>
-		              <a href="https://github.com/geordidearns" target="_blank"><img src="assets/githubfinal.png"></a>
-		              <div id = "muteBtn"><img src="assets/startbuttonfinal.png"></div>
+		              <a href="https://www.twitter.com/geordidearns" target="_blank"><img src="imgs/twitterfinal.png"></a>
+		              <a href="https://github.com/geordidearns" target="_blank"><img src="imgs/githubfinal.png"></a>
+		              <div id = "muteBtn"><img src="imgs/startbuttonfinal.png"></div>
 
 		          </ul>
 		</footer>
