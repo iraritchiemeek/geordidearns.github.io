@@ -53,21 +53,24 @@ Logic.prototype.animateBacon = function() {
     // see if its this.time to spawn a new object
     if (this.time > (this.lastSpawn + this.spawnRate)) {
         this.lastSpawn = this.time;
-        spawnRandomObject();
+        this.spawnBacon();
     }
 
     // request another animation frame
-    requestAnimationFrame(animate);
+    animate()
+    function animate() {
+    	requestAnimationFrame(animate);
+    }
 
     // clear the canvas so all this.objects can be
     // redrawn in new positions
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    this.ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     // draw the line where new this.objects are spawned
-    ctx.beginPath();
-    ctx.moveTo(0, this.spawnLineY);
-    ctx.lineTo(canvas.width, this.spawnLineY);
-    ctx.stroke();
+    this.ctx.beginPath();
+    this.ctx.moveTo(0, this.spawnLineY);
+    this.ctx.lineTo(canvas.width, this.spawnLineY);
+    this.ctx.stroke();
 
     // move each object down the canvas
     for (this.i = 0; i < this.objects.length; i++) {
@@ -80,7 +83,7 @@ Logic.prototype.animateBacon = function() {
         if (i === 0){
             checkCollision(object);
         }
-        ctx.drawImage(object.image, object.x, object.y, 30, 30);
+        this.ctx.drawImage(object.image, object.x, object.y, 30, 30);
     }	
 }
 
